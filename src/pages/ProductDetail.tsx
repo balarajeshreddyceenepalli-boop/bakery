@@ -46,7 +46,7 @@ const ProductDetail: React.FC = () => {
       if (productData.flavors?.length > 0) {
         setSelectedFlavor(productData.flavors[0]);
       }
-      if (productData.weight_options?.length > 0) {
+      if (Array.isArray(productData.weight_options) && productData.weight_options.length > 0) {
         setSelectedWeight(productData.weight_options[0]);
       }
 
@@ -202,7 +202,7 @@ const ProductDetail: React.FC = () => {
               )}
 
               {/* Weight Options */}
-              {product.weight_options && product.weight_options.length > 0 && (
+              {Array.isArray(product.weight_options) && product.weight_options.length > 0 && (
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Choose Weight</h3>
                   <div className="flex flex-wrap gap-2">
