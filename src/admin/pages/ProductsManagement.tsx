@@ -75,8 +75,8 @@ const ProductsManagement: React.FC = () => {
     try {
       const productData = {
         ...formData,
-        weight_options: JSON.stringify(formData.weight_options.filter(w => w.trim())),
-        image_urls: JSON.stringify(formData.image_urls.filter(img => img.trim())),
+        weight_options: formData.weight_options.filter(w => w.trim()),
+        image_urls: formData.image_urls.filter(img => img.trim()),
       };
 
       let productId: string;
