@@ -114,7 +114,7 @@ const ProductDetail: React.FC = () => {
   }
 
   const images = product.image_urls?.length > 0 
-    ? product.image_urls 
+    ? (Array.isArray(product.image_urls) ? product.image_urls : [product.image_urls])
     : ['https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg'];
 
   return (
